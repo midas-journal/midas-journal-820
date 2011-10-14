@@ -1,0 +1,38 @@
+This project is part of the 3D Toolkit (3DTK).
+-------------------------------------------------------------------
+
+To compile the project simply call "make". This will configure 3DTK-planes using the
+default settings. If you wish to configure the project using custom settings do:
+you may change into the build directory ".build" and configure the
+project with your preferred cmake configurator, i.e.:
+cd .build && cmake -i ../
+
+For Microsoft Windows, use the cmake-gui application provided by cmake to
+configure and generate project files for the appropriate version of visual
+studio of your system. Use the INSTALL target to built the entire project.
+Executables (and .dll's) will then reside in the "windows" folder.
+
+-------------------------------------------------------------------
+
+For a detailed explanation of how to use the VTK Wrapper for the implementation
+of the Hough Transform n 3DTK see:
+Dorit Borrmann and David Doria. Hough Transform Plane Detector. The VTK Journal,
+June 2011.
+
+For a detailed explanation of the functionality of the programm, please
+refer to:
+Dorit Borrmann, Jan Elseberg, Kai Lingemann, and Andreas Nüchter. The 3D
+Hough Transform for Plane Detection in Point Clouds - A Review and A new
+Accumulator Design, Journal 3D Research, Springer, Volume 2, Number 2, 
+March 2011.
+
+Two example point clouds are included in the data directory.
+
+EXAMPLES:
+(using the data set in the repository, the result will be a the point cloud
+data/counter_out.vtp, with each point label with the color of the plane)
+bin/HoughPlanes data/counter.vtp data/counter_out.vtp
+
+The parameters for the Hough Transform can either be specified directly using
+SetFunctions or given in a config file. See bin/hough.cfg for an example.
+
